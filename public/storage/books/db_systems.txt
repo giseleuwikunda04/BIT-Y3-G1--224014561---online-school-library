@@ -1,0 +1,35 @@
+=======================================================
+FUNDAMENTALS OF DATABASE SYSTEMS (3NF & SQL)
+Author: Ramez Elmasri & Shamkant Navathe
+Category: Computer Science
+Total Pages: 350
+=======================================================
+
+CHAPTER 1: RELATIONAL DATA MODEL CONCEPTS
+-------------------------------------------------------
+The relational model represents the database as a collection of relations (tables). Informally, each relation resembles a table of values or, to some extent, a flat file of records.
+
+Key Definitions:
+- Tuple: A row in a relation table.
+- Attribute: A column header in a relation.
+- Domain: The set of allowable atomic values for a column.
+
+CHAPTER 2: NORMALIZATION TO THIRD NORMAL FORM (3NF)
+-------------------------------------------------------
+Normalization is the process of decomposing relations with anomalies to produce smaller, well-structured relations.
+
+1NF (First Normal Form):
+A relation is in 1NF if and only if all domain values are atomic (no repeating groups, no arrays, no multi-valued attributes).
+
+2NF (Second Normal Form):
+A relation is in 2NF if it is in 1NF and every non-prime attribute is fully functionally dependent on the entire primary key (no partial key dependencies).
+
+3NF (Third Normal Form):
+A relation is in 3NF if it is in 2NF and no non-prime attribute is transitively dependent on the primary key (no transitive dependencies X -> Y -> Z).
+
+In our Online School Library System:
+- 'users' holds user credentials and roles.
+- 'ebooks' holds catalog metadata.
+- 'borrowings' references user_id and ebook_id via foreign keys without duplicating author or email.
+- 'reading_logs' references borrow_id and records page progress independently.
+This maintains strict 3NF integrity.

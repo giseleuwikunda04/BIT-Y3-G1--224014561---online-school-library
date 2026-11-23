@@ -1,0 +1,32 @@
+=======================================================
+CLEAN CODE IN PHP & MODERN WEB ARCHITECTURE
+Author: Robert C. Martin & Tech Scholars
+Category: Computer Science
+Total Pages: 280
+=======================================================
+
+CHAPTER 1: CLEAN CODE & MEANINGFUL NAMES
+-------------------------------------------------------
+Code is clean if it can be read, understood, and enhanced by a developer other than its original author. With understandability comes readability, changeability, extensibility, and maintainability.
+
+Rule 1: Use Intention-Revealing Names
+The name of a variable, function, or class should answer all the big questions. It should tell you why it exists, what it does, and how it is used. If a name requires a comment, then the name does not reveal its intent.
+
+Rule 2: Functions Should Do One Thing
+Functions should do one thing. They should do it well. They should do it only. In PHP:
+- Keep methods short and focused (10-20 lines ideally).
+- Avoid side effects in query methods.
+- Return early to reduce nesting depth.
+
+CHAPTER 2: SECURE PDO PREPARED STATEMENTS
+-------------------------------------------------------
+Never concatenate untrusted user variables into raw SQL strings. Always utilize PDO parameterized statements:
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+$stmt->execute(['email' => $email]);
+$user = $stmt->fetch();
+
+This ensures total immunity to SQL injection vulnerabilities and ensures clean type safety across the persistence tier.
+
+CHAPTER 3: ROBUST ERROR HANDLING & LOGGING
+-------------------------------------------------------
+Do not swallow exceptions silently. Handle known exceptional conditions at appropriate boundaries, log technical details internally for system administrators, and present clean, informative, user-friendly messages in the user interface.
