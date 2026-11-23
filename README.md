@@ -1,6 +1,6 @@
 # Online School Library E-Book System
 
-> **Student Project Assignment — Group 2 (Entry #104)**  
+> **Student Project Assignment — Group 1 (Entry #104)**  
 > **Student Name:** UWIMANINKUNDA GISELE  
 > **Registration Number:** 224014561  
 > **Course:** Web Development & Relational Database Engineering (Day 1 – Day 10)  
